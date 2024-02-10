@@ -1,0 +1,26 @@
+#hero{
+    margin-bottom: 60px;
+
+    .container{
+        
+    }
+}
+
+.featured-products{
+    .container{
+        .row{
+            display: grid;
+            grid-column-gap: 20px;
+            grid-row-gap: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 280px));
+            justify-content: center;
+            text-align: center;
+        }
+    }
+}
+
+@media (max-width: 599px) {
+    #hero{
+        margin-bottom: 40px;
+    }
+}

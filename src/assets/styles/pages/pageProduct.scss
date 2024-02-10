@@ -1,0 +1,173 @@
+@import "~react-image-gallery/styles/scss/image-gallery.scss";
+
+#PageDetailProduct{
+
+    .product-single{
+        .container{
+            display: flex;
+
+            .media{
+                width: 580px;
+               
+
+                .image-gallery-left-nav .image-gallery-svg, 
+                .image-gallery-right-nav .image-gallery-svg{
+                    height: 60px;
+                    width: 40px;
+                }
+
+                .image-gallery{
+                    &-thumbnail{
+                        &:focus,
+                        &.active{
+                            border: 4px solid #2266cc;
+                        }
+                    }
+                    
+                    &-icon:hover{
+                        color: #2266cc;
+                    }
+                }
+            }
+
+            .data{
+                flex: 1;
+                padding-left: 60px;
+
+                .title__primary{
+                    text-align: left;
+                    margin-bottom: 15px;
+                }
+
+                .meta{
+                    font-size: .85rem;
+                    line-height: .85rem;
+                    color: #999;
+                    margin-bottom: 20px;
+
+                    span{
+                        margin-right: 20px;
+
+                        &:last-child{
+                            margin-right: 0;
+                        }
+                    }
+                }
+
+                .price{
+                    color: #ff675d;
+                    font-size: 2.2rem;
+                    line-height: 2.2rem;
+                    font-weight: bold;
+                    margin-bottom: 30px;
+                }
+
+                .description{
+                    margin-bottom: 30px;
+                }
+
+                .add-to-cart{
+                    border-bottom: 1px solid #eee;
+                    border-top: 1px solid #eee;
+                    padding: 20px 0;
+                    display: flex;
+                    position: relative;
+
+                    .ItemsCount{
+                        margin-left: 0;
+                    }
+                }
+
+                .error{
+                    width: 100%;
+                    display: block;
+                    text-align: center;
+                    margin-top: 10px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1090px) {
+
+    #PageDetailProduct{
+        .image-gallery-thumbnails-wrapper.left{
+            width: 73px;
+        }
+
+        .product-single .container{
+            .media {
+                width: 404px;
+    
+                .image-gallery-thumbnail{
+                    width: 100%;
+                }
+            }
+
+            .data{
+                padding-left: 40px;
+
+                .add-to-cart{
+                    flex-direction: column;
+
+                    .ItemsCount{
+                        margin-bottom: 20px;
+                        width: 100%;
+
+                        .input__ItemsCount{
+                            flex: 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    #PageDetailProduct{
+        .product-single .container{
+            flex-direction: column;
+            align-items: flex-start;
+
+            .media{
+                width: 100%;
+                margin-bottom: 40px;
+                max-width: 490px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .data{
+                padding-left: 0;
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media (max-width: 599px) {
+    #PageDetailProduct{
+        .product-single {
+            position: relative; 
+            padding-top: 40px;
+
+            .container{
+                .media{
+                    .image-gallery-thumbnails{
+                        display: none;
+                    }
+    
+                    .image-gallery-slide-wrapper {
+                        width: 100%;
+                        max-width: 340px;
+                        margin-left: auto;
+                        margin-right: auto;
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}

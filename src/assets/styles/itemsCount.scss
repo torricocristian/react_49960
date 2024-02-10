@@ -1,0 +1,54 @@
+.ItemsCount{
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    margin-left: auto;
+    margin-right: 20px;
+    flex-wrap: wrap;
+
+    .less,
+    .plus{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100%;
+        height: 43px;
+        color: white;
+        font-weight: 500;
+        cursor: pointer;
+        font-size: 20px;
+        background: transparent;
+        border: 1px solid #ebebeb;
+        color: #222;
+        width: 40px;
+    }
+
+    .less{
+
+    }
+
+    .plus{
+
+    }
+    
+    .input{
+        width: 90px;
+        
+        input{
+            border-radius: 0;
+            border: 1px solid #ebebeb;
+            border-right: 0;
+            border-left: 0;
+            text-align: center;
+        }
+    }
+
+    .error{
+        display: flex;
+        width: 100%;
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        font-size: .7rem;
+    }
+}
