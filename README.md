@@ -6,5 +6,5 @@
 
 
 - Versiones:
-  - v18.11.0 node
+  - v16.15.0 node
   - 8.19.2 npm
