@@ -1,30 +1,17 @@
 
-import {useState,useEffect} from 'react'
+import {useState,useEffect } from 'react';
+import { getDocs, collection, getFirestore, query, where } from 'firebase/firestore';
+
 import { Product } from '../../components/Product';
 import Title from '../../components/Title';
 import '../../assets/styles/pages/PageListProduct.scss';
-import { getDocs, collection, getFirestore, query, where } from 'firebase/firestore';
+import '../../assets/styles/forms.scss';
+
 
 
 const PageListProduct = () => {
   const [products, setProducts] = useState([]);
   const [category, setCategory] = useState('todos');
-
-//   useEffect(()=>{
-
-//     const db = getFirestore() //instanciamos
-
-//     const productsCollection = collection(db, 'items') //declaramos collection
-
-//     getDocs(productsCollection)
-//         .then( snapshot => {
-//             const dataExtraida = snapshot.docs.map(datos => datos.data())
-//             setProducts(dataExtraida);
-//         })                
-
-//   },[]);
-
-
 
   //Nosotros necesitamos, que al cambiar el valor de la categoria, tambien se actulice los productos
   useEffect(()=>{
@@ -32,22 +19,8 @@ const PageListProduct = () => {
     //Necesitamos llamar a firestore y traer todas las gorras 
     const db = getFirestore();
     
-
-    //Devolver todos o solo devolver el valor de la categoria
-    if(category == 'todos'){
-
-        var q = query(
-            collection(db, 'items')
-        )
-
-    }else{
-
-        var q = query(
-            collection(db, 'items'),
-            where('categoria', '==', category)
-        )
-
-    }
+    //Operador ternario 
+    var q = (category == 'todos') ? query( collection(db, 'items') ) : query( collection(db, 'items'), where('categoria', '==', category) );
 
     getDocs(q)
         .then( snapshot => {
@@ -55,10 +28,12 @@ const PageListProduct = () => {
             setProducts(dataExtraida);
         })
 
-
-
   },[category])
 
+
+  const handleSelect = (event) => {
+    setCategory(event.target.value)
+  }
 
   return (
       <main>
@@ -69,19 +44,7 @@ const PageListProduct = () => {
                   </h2>
 
                   <div className="row">
-                    <select name="categories" id="categories" value={category} onChange={
-                        (event) => {
-                            setCategory(event.target.value) // <-- setCategory('gorras')
-                        }
-                    } 
-                    
-                    
-                        style={
-                            {
-                                marginBottom: '40px',
-                                height: '30px'
-                            }
-                        }
+                    <select className="filtroCategoria" name="categories" id="categories" value={category} onChange={handleSelect} 
                     >
                         <option value="todos">Todos</option>
                         <option value="zapatillas">Zapatillas</option>

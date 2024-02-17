@@ -1,7 +1,6 @@
 import NavBar from '../../components/NavBar'
 import Logo from '../../components/Logo'
 import IconBox from '../../components/IconBox'
-import Input from '../../components/Input'
 import { Link } from 'react-router-dom';
 import { useCart } from '../../hooks/useCart';
 

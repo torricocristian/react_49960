@@ -1,15 +1,16 @@
 import {useState,useEffect} from 'react';
+import {getDocs, getFirestore, query, where, collection} from 'firebase/firestore'
 import {useParams, Link} from 'react-router-dom';
 import ImageGallery from 'react-image-gallery';
+
 import '../../assets/styles/pages/pageProduct.scss';
 import '../../assets/styles/btn.scss';
 import '../../assets/styles/fonts/riode.scss';
 import ItemsCount from '../../components/ItemsCount';
-
 import { useCart } from '../../hooks/useCart';
 
 
-import {getDocs, getFirestore, query, where, collection} from 'firebase/firestore'
+
 
 
 const PageDetailProduct = () => {
