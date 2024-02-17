@@ -7,11 +7,18 @@
 
 
 ## Procedimiento
-  - npm install
-  - npm run start
+
+  ```bash
+    npm install
+    npm run start
+  ```
+    
+ 
 
 ## Deploy
-  - npm run build
+ ```bash
+    npm run build
+  ```
 
 
 
