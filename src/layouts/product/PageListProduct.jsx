@@ -19,7 +19,6 @@ const PageListProduct = () => {
     //Necesitamos llamar a firestore y traer todas las gorras 
     const db = getFirestore();
     
-    //Operador ternario 
     var q = (category == 'todos') ? query( collection(db, 'items') ) : query( collection(db, 'items'), where('categoria', '==', category) );
 
     getDocs(q)
